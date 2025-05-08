@@ -1,17 +1,17 @@
 <div class='container mt-4'>
-              <h1 class='mb-4'>Facebook Posts</h1>
-              <div class='row'>
-                <% @posts.each do |post| %>
-                  <div class='col-md-4 mb-3'>
-                    <div class='card'>
-                      <div class='card-body'>
-                        <h5 class='card-title'>User <%= post.user_id %></h5>
-                        <p class='card-text'><%= post.content %></p>
-                        <small class='text-muted'><%= post.created_at.strftime('%B %d, %Y') %></small>
-                        <a href='<%= post_path(post) %>' class='btn btn-primary mt-3'>View Post</a>
-                      </div>
-                    </div>
-                  </div>
-                <% end %>
+      <h1 class='mb-4'>Facebook Posts</h1>
+      <div class='row'>
+        <% @posts.each do |post| %>
+          <div class='col-md-4 mb-3'>
+            <div class='card'>
+              <div class='card-body'>
+                <h5 class='card-title'>User <%= post.user_id %></h5>
+                <p class='card-text'><%= post.content %></p>
+                <small class='text-muted'><%= post.created_at.strftime('%B %d, %Y') %></small>
+                <a href='<%= post_path(post) %>' class='btn btn-primary mt-3'>View Post</a>
               </div>
-              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      </div>

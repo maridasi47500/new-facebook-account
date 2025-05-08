@@ -1,17 +1,17 @@
 <div class='container mt-4'>
-              <h1 class='mb-4'>Instagram Photos</h1>
-              <div class='row'>
-                <% @photos.each do |photo| %>
-                  <div class='col-md-3 mb-3'>
-                    <div class='card'>
-                      <%= image_tag photo.image, class: 'card-img-top', alt: 'Photo' %>
-                      <div class='card-body'>
-                        <p class='card-text'><%= photo.caption %></p>
-                        <small class='text-muted'>Uploaded on: <%= photo.created_at.strftime('%B %d, %Y') %></small>
-                      </div>
-                    </div>
-                  </div>
-                <% end %>
+      <h1 class='mb-4'>Instagram Photos</h1>
+      <div class='row'>
+        <% @photos.each do |photo| %>
+          <div class='col-md-3 mb-3'>
+            <div class='card'>
+              <%= image_tag photo.image, class: 'card-img-top', alt: 'Photo' %>
+              <div class='card-body'>
+                <p class='card-text'><%= photo.caption %></p>
+                <small class='text-muted'>Uploaded on: <%= photo.created_at.strftime('%B %d, %Y') %></small>
               </div>
-              <%= link_to 'Upload Photo', new_photo_path, class: 'btn btn-success mt-4' %>
-              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <%= link_to 'Upload Photo', new_photo_path, class: 'btn btn-success mt-4' %>
+      </div>
