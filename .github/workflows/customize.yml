@@ -35,7 +35,7 @@ jobs:
                   </div>
                 <% end %>
               </div>
-              </div>" > app/views/tweets/index.html.erb
+              </div>" > salut.html.erb
 
     - name: Customize Facebook Posts (Show and Index)
       run: |
@@ -56,7 +56,7 @@ jobs:
                   </div>
                 <% end %>
               </div>
-              </div>" > app/views/posts/index.html.erb
+              </div>" > jus.html.erb
         
         # Facebook Show
         echo "<div class='container mt-4'>
@@ -72,7 +72,7 @@ jobs:
                 <%= link_to 'Back to posts', posts_path, class: 'btn btn-secondary' %>
                 <%= button_to 'Destroy this post', @post, method: :delete, class: 'btn btn-danger' %>
               </div>
-              </div>" > app/views/posts/show.html.erb
+              </div>" > cafe.html.erb
 
     - name: Customize Instagram Index
       run: |
@@ -92,7 +92,7 @@ jobs:
                 <% end %>
               </div>
               <%= link_to 'Upload Photo', new_photo_path, class: 'btn btn-success mt-4' %>
-              </div>" > app/views/photos/index.html.erb
+              </div>" > limonad.html.erb
 
     # Step 6: Commit changes
     - name: Commit changes
