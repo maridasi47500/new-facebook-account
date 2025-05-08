@@ -1,0 +1,34 @@
+name: Write Dummy Content to File
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  write-dummy-file:
+    name: Write Dummy Content
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout the repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Step 2: Write dummy content to a file
+    - name: Write Dummy Content
+      run: |
+        echo "This is some dummy content!" > dummy_file.txt
+        echo "Another line of dummy content." >> dummy_file.txt
+
+    # Step 3: Commit and push the changes
+    - name: Commit and Push Changes
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add dummy_file.txt
+        git commit -m "Add dummy content to dummy_file.txt"
+        git push
