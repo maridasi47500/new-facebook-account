@@ -69,3 +69,4 @@ end
 gem 'devise'
 gem 'bootstrap', '~> 5.3.0'
 gem 'faker'
+gem 'dartsass-sprockets'
