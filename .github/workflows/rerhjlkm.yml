@@ -1,0 +1,31 @@
+name: Add New Links to Index Pages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  add_new_links:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout the repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Step 2: Add "New" links to index pages
+    - name: Add New Links
+      run: |
+        for file in $(find app/views -type f -name 'index.html.erb'); do
+          resource=$(basename $(dirname $file))
+          new_link="<%= link_to 'New ${resource.singularize.capitalize}', new_${resource.singularize}_path, class: 'btn btn-primary' %>"
+          sed -i "\$a$new_link" $file
+        done
+
+    # Step 3: Commit and push changes
+    - name: Commit and Push Changes
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add app/views
+        git commit -m "Add 'New' links to all index pages"
+        git push
