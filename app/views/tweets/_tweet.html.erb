@@ -1,12 +1,10 @@
-<div id="<%= dom_id tweet %>">
-  <p>
-    <strong>User:</strong>
-    <%= tweet.user_id %>
-  </p>
+          <div class='col-md-4 mb-3'>
+            <div class='card'>
+              <div class='card-body'>
+                <h5 class='card-title'>User <%= tweet.user_id %></h5>
+                <p class='card-text'><%= tweet.content %></p>
+                <small class='text-muted'><%= tweet.created_at.strftime('%B %d, %Y') %></small>
+              </div>
+            </div>
+          </div>
 
-  <p>
-    <strong>Content:</strong>
-    <%= tweet.content %>
-  </p>
-
-</div>

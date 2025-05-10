@@ -12,13 +12,12 @@
   <% end %>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.hidden_field :user_id,value:current_user.try(:id) %>
   </div>
 
   <div>
     <%= form.label :friend_id, style: "display: block" %>
-    <%= form.text_field :friend_id %>
+    <%= form.select :friend_id, User.all.pluck(:email,:id) %>
   </div>
 
   <div>
