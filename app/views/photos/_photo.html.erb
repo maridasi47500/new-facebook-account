@@ -1,17 +1,11 @@
-<div id="<%= dom_id photo %>">
-  <p>
-    <strong>User:</strong>
-    <%= photo.user_id %>
-  </p>
 
-  <p>
-    <strong>Image:</strong>
-    <%= photo.image %>
-  </p>
 
-  <p>
-    <strong>Caption:</strong>
-    <%= photo.caption %>
-  </p>
+            <div class='card'>
+              <img src="/uploads/<%= photo.image%>" class='card-img-top' alt="Photo">
+              <div class='card-body'>
+                <p class='card-text'><%= photo.caption %></p>
+                <small class='text-muted'>Uploaded by: <%= photo.user.email %></small>
+                <small class='text-muted'>Uploaded on: <%= photo.created_at.strftime('%B %d, %Y') %></small>
+              </div>
+            </div>
 
-</div>

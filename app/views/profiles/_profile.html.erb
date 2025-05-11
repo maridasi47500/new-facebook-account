@@ -1,17 +1,19 @@
-<div id="<%= dom_id profile %>">
-  <p>
-    <strong>User:</strong>
-    <%= profile.user_id %>
-  </p>
+<div id="<%= dom_id profile %>" class="card" style="width: 18rem;">
+  <div class="card-body">
+    <img src="/uploads/<%= profile.photo %>" class="card-img-top" alt="User Photo" />
+    <p>
+      <strong>User:</strong>
+      <%= profile.user.email %>
+    </p>
 
-  <p>
-    <strong>Photo:</strong>
-    <%= profile.photo %>
-  </p>
+    <p>
+      <strong>Photo:</strong>
+    </p>
 
-  <p>
-    <strong>Bio:</strong>
-    <%= profile.bio %>
-  </p>
 
+    <p class="card-text">
+      <strong>Bio:</strong>
+      <%= profile.bio %>
+    </p>
+  </div>
 </div>

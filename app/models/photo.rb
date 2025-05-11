@@ -1,6 +1,6 @@
 class Photo < ApplicationRecord
   belongs_to :user
-def self.image=(uploaded_io)
+def image=(uploaded_io)
 File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
   file.write(uploaded_io.read)
 end

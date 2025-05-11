@@ -8,6 +8,7 @@
                 <h5 class='card-title'>User <%= tweet.user_id %></h5>
                 <p class='card-text'><%= tweet.content %></p>
                 <small class='text-muted'><%= tweet.created_at.strftime('%B %d, %Y') %></small>
+                <small class='text-muted'><%= link_to "voir tweet",tweet %></small>
               </div>
             </div>
           </div>
@@ -15,4 +16,3 @@
       </div>
       </div>
 <%=link_to "nouveau tweet",new_tweet_path%>
-<%= link_to 'New tweets', new_tweets_path, class: 'btn btn-primary' %>

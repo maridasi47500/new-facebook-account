@@ -2,14 +2,26 @@
 
 <h1>Friendships</h1>
 
-<div id="friendships">
-  <% @friendships.each do |friendship| %>
-    <%= render friendship %>
+
+<div class="container">
+  <div class="row">
+    <% @friendships.each do |friendship| %>
+      <div class="col-md-4">
+        <div id="<%= dom_id(friendship) %>" class="card" style="width: 18rem;">
+          <div class="card-body">
+
+            <h5 class="card-title">email ami: <%= friendship.friend.email %></h5>
+            <p class="card-text">mon email: <%= friendship.user.email %></p>
+            <p class="card-text">statut: <%= Friendship.findtypes(friendship.status) %></p>
     <p>
       <%= link_to "Show this friendship", friendship %>
     </p>
-  <% end %>
+
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <%= link_to "New friendship", new_friendship_path %>
-<%= link_to 'New friendships', new_friendships_path, class: 'btn btn-primary' %>

@@ -1,17 +1,13 @@
-<div id="<%= dom_id friendship %>">
-  <p>
-    <strong>User:</strong>
-    <%= friendship.user_id %>
-  </p>
+        <div id="<%= dom_id(friendship) %>" class="card" style="width: 18rem;">
+          <div class="card-body">
 
-  <p>
-    <strong>Friend:</strong>
-    <%= friendship.friend_id %>
-  </p>
+            <h5 class="card-title">email ami: <%= friendship.friend.email %></h5>
+            <p class="card-text">mon email: <%= friendship.user.email %></p>
+            <p class="card-text">statut: <%= Friendship.findtypes(friendship.status) %></p>
+    <p>
+      <%= link_to "Show this friendship", friendship %>
+    </p>
 
-  <p>
-    <strong>Status:</strong>
-    <%= friendship.status %>
-  </p>
+          </div>
+        </div>
 
-</div>

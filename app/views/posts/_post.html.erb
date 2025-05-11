@@ -1,12 +1,7 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>User:</strong>
-    <%= post.user_id %>
-  </p>
+        <div id="<%= dom_id(post) %>" class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">User: <%= post.user.email %></h5>
+            <p class="card-text">Bio: <%= post.content %></p>
+          </div>
+        </div>
 
-  <p>
-    <strong>Content:</strong>
-    <%= post.content %>
-  </p>
-
-</div>

@@ -4,15 +4,16 @@
         <% @photos.each do |photo| %>
           <div class='col-md-3 mb-3'>
             <div class='card'>
-              <%= image_tag photo.image, class: 'card-img-top', alt: 'Photo' %>
+              <img src="/uploads/<%= photo.image%>" class='card-img-top' alt="Photo">
               <div class='card-body'>
                 <p class='card-text'><%= photo.caption %></p>
                 <small class='text-muted'>Uploaded on: <%= photo.created_at.strftime('%B %d, %Y') %></small>
+      <p><%= link_to 'voir Photo', photo_path(photo.id), class: 'btn btn-success mt-4' %></p>
               </div>
             </div>
           </div>
         <% end %>
       </div>
-      <%= link_to 'Upload Photo', new_photo_path, class: 'btn btn-success mt-4' %>
+      <%= link_to 'new Photo', new_photo_path, class: 'btn btn-success mt-4' %>
       </div>
-<%= link_to 'New photos', new_photos_path, class: 'btn btn-primary' %>
+<%= link_to 'New photo', new_photo_path, class: 'btn btn-primary' %>
